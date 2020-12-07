@@ -117,28 +117,32 @@ static int random_number_release(struct inode* inode, struct file* filp)
 static ssize_t random_number_read(struct file* filp, char* buffer, size_t len, loff_t* offset)
 {
 	
-	// get len bytes randomly
-    char *temp = kmalloc(len, GFP_KERNEL);
+	char *temp = 0;
+	
+	if (len>8) len = 8; // maximum is 8 bytes
+	temp =  kmalloc(len, GFP_KERNEL);
 	if (temp == NULL)
-    {
-            printf("Allocation failed\n");
-            return -1;
-    }
+    	{
+            printk(KERN_ALERT "Allocation failed\n");
+            return -EFAULT;
+    	}
+	
+	// get random bytes to temp
 	get_random_bytes(temp, len);
 	
-    // send 'len' bytes  from temp to buffer 
+    	// send 'len' bytes  from temp to buffer 
     
 	if(copy_to_user(buffer,temp,len) == 0)
 	{
         // Success
 		printk(KERN_INFO "Send random number to user.\n");
 		kfree(temp);
-		return 0;
+		return len;
 	}
 	else
 	{
         // Failed
-		printk(KERN_INFO "ERROR: Can not send random number to user!\n");
+		printk(KERN_ALERT "ERROR: Can not send random number to user!\n");
 		kfree(temp);
 		return -EFAULT;
 	}
