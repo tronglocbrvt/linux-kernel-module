@@ -119,6 +119,11 @@ static ssize_t random_number_read(struct file* filp, char* buffer, size_t len, l
 	
 	// get len bytes randomly
     char *temp = kmalloc(len, GFP_KERNEL);
+	if (temp == NULL)
+    {
+            printf("Allocation failed\n");
+            return -1;
+    }
 	get_random_bytes(temp, len);
 	
     // send 'len' bytes  from temp to buffer 

@@ -26,8 +26,14 @@ int main()
         scanf("%d",&n);
         if (n<1 || n>8) break;
 
-	if (temp != NULL) free(temp);
+	    if (temp != NULL) 
+            free(temp);
         temp = malloc(n);
+        if (temp == NULL)
+        {
+            printf("Allocation failed\n");
+            return -1;
+        }
         printf("Receiving information from device file...\n");
         
         if(read(file_device, temp, n) < 0)
