@@ -12,7 +12,7 @@
 ```terminal
 cd random_generator
 ```
-- **Bước 2**: Biên dịch mã nguồn, tạo ra kernel module thông qua Makefile và Kbuild, bằng cách gõ lệnh
+- **Bước 2**: Biên dịch mã nguồn, tạo ra kernel module thông qua Makefile và Kbuild, bằng cách gõ lệnh:
 ```terminal
 make
 ```
