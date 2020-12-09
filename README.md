@@ -16,6 +16,10 @@ cd random_generator
 ```terminal
 make
 ```
+hoặc
+```terminal
+make all
+```
 - **Bước 3**: 
   - Kiểm tra danh sách các file có trong lúc thư mục lúc này, ta thấy có file ```random_gen.ko```:
   ```terminal
