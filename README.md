@@ -47,19 +47,24 @@ make all
     ```
     ![image](https://drive.google.com/uc?export=view&id=1YJbilnwzAwVDh2TwFTHAkSSVxSk8gx8E)
     - Ta có thể kiểm tra xem module đã được load thành công chưa bằng lệnh ```lsmod```.
-    ![image](https://drive.google.com/uc?export=view&id=/16cAEoh3ovLkcFgKI_vdT9mSOCDmQWxaL)
+    ![image](https://drive.google.com/uc?export=view&id=16cAEoh3ovLkcFgKI_vdT9mSOCDmQWxaL)
     - Dùng lệnh ```dmesg``` để theo dõi quá trình hoạt động của module.
+     ![image](https://drive.google.com/uc?export=view&id=150yvV1JEgRbmQdHkG_E8Z6-QAUEz0xNi)
  - **Bước 6**: Thực hiện việc random số:
     - Ta sử dụng lệnh sau:
     ```terminal 
     ./random_gen_user
     ```
+   ![image](https://drive.google.com/uc?export=view&id=1W3B0RCYDiw3V_n6jfV2l0vMubO68ikEd)
     - Nhập số từ 1-8 tương ứng với lựa chọn số byte mà người dùng mong muốn cho việc random số. Nếu muốn thoát nhập các số ngoài phạm vi 1 đến 8.
+   ![image](https://drive.google.com/uc?export=view&id=11IWryGy55ndVdzsH7ARDzDefmkL5D1mD)
 - **Bước 7**: Tháo module khỏi kernel:
 ```terminal
 sudo rmmod random_gen.ko
 ```
+![image](https://drive.google.com/uc?export=view&id=1LB3kL8IwhQ0U7mOjTmPtEriiNPZpoELc)
 - **Bước 8**: Dọn dẹp thư mục (dọn dẹp các file do Makefile và Kbuild tạo ra trước đó):
 ```terminal
 make clean
 ```
+![image](https://drive.google.com/uc?export=view&id=1gR8diOrT6pX56-fufUbHoZqBo0PdIH0A)
