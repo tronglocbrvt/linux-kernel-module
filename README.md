@@ -57,7 +57,7 @@ make all
     ```
    ![image](https://drive.google.com/uc?export=view&id=1W3B0RCYDiw3V_n6jfV2l0vMubO68ikEd)
     - Nhập số từ 1-8 tương ứng với lựa chọn số byte mà người dùng mong muốn cho việc random số. Nếu muốn thoát nhập các số ngoài phạm vi 1 đến 8.
-   ![image](https://drive.google.com/uc?export=view&id=11IWryGy55ndVdzsH7ARDzDefmkL5D1mD)
+    `![image](https://drive.google.com/uc?export=view&id=11IWryGy55ndVdzsH7ARDzDefmkL5D1mD)
 - **Bước 7**: Tháo module khỏi kernel:
 ```terminal
 sudo rmmod random_gen.ko
