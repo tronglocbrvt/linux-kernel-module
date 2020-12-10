@@ -4,12 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int file_device,n;
+int file_device, n;
 char * temp = NULL;
 
 int main()
 {
-	
     // Open file device
     printf("Opening device file...\n");
 	file_device = open("/dev/random_number_device", O_RDONLY);
@@ -22,11 +21,11 @@ int main()
     // Loop to get random number.
     while (1)
     {
+	n = 0;
         printf("Type in number of bytes of your random number (1 to 8) - else : quit: ");
         scanf("%d",&n);
-        if (n<1 || n>8) break;
-
-	    if (temp != NULL) 
+	if ((n < 1) || (n > 8)) break;
+	if (temp != NULL) 
             free(temp);
         temp = malloc(n);
         if (temp == NULL)
@@ -45,7 +44,7 @@ int main()
         }
         // Print 
         printf("The random number is: %llu\n",*(unsigned long long*)temp);
-    }
+    } 
     free(temp);
     close(file_device);
 	printf("Good bye!\n");
