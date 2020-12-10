@@ -12,6 +12,7 @@
 ```terminal
 cd random_generator
 ```
+![image](https://drive.google.com/uc?export=view&id=1OjKsB5ay-S6Wx3i1jVaYU9oAR8r-CYms)
 - **Bước 2**: Biên dịch mã nguồn, tạo ra kernel module thông qua Makefile và Kbuild, bằng cách gõ lệnh:
 ```terminal
 make
@@ -20,27 +21,33 @@ hoặc
 ```terminal
 make all
 ```
+![image](https://drive.google.com/uc?export=view&id=12KNAb3xs_Hg-brr8zgo69oDWQMSGX9SP)
 - **Bước 3**: 
   - Kiểm tra danh sách các file có trong lúc thư mục lúc này, ta thấy có file ```random_gen.ko```:
   ```terminal
   ls
   ```
+  ![image](https://drive.google.com/uc?export=view&id=1VtiauPdAAKt_qOL3ve5b67QXGGi2kqLQ)
   - Để biết được các thông tin về module, ta sử dụng lệnh:
   ```terminal
   modinfo random_gen.ko
   ```
+  ![image](https://drive.google.com/uc?export=view&id=1AUrYGsXqENGU9CXG5yzkJCZ1Nun4c8X-)
 - **Bước 4**: 
   - Cấp quyền root:
   ```terminal
   sudo -s
   ```
   - Nhập mật khẩu để tiến hành xác thực và lấy quyền root.
+  ![image](https://drive.google.com/uc?export=view&id=1zMeZYOdn2uAwdORBhBzNGXUxm1PYLHdg)
  - **Bước 5**: Lắp module vào kernel
     - Ta sử dụng lệnh sau:
     ```terminal
     sudo insmod random_gen.ko
     ```
+    ![image](https://drive.google.com/uc?export=view&id=1YJbilnwzAwVDh2TwFTHAkSSVxSk8gx8E)
     - Ta có thể kiểm tra xem module đã được load thành công chưa bằng lệnh ```lsmod```.
+    ![image](https://drive.google.com/uc?export=view&id=/16cAEoh3ovLkcFgKI_vdT9mSOCDmQWxaL)
     - Dùng lệnh ```dmesg``` để theo dõi quá trình hoạt động của module.
  - **Bước 6**: Thực hiện việc random số:
     - Ta sử dụng lệnh sau:
